@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Proyecto Arquitectura</title>
+    </h:head>
+    <h:body>
+        <p:growl id="growl" sticky="true" showDetail="true" />
+        <h:form>
+            <p:messages autoUpdate="true"/>
+            <h:panelGrid columns="2">
+                <p:outputLabel for="txtUsuario" value="Usuario"/>
+                <p:inputText id="txtUsuario" value="#{login.usuario.nombre}" required="true"/>
+                
+                <p:outputLabel for="txtClave" value="Clave"/>
+                <p:password id="txtClave" value="#{login.usuario.clave}" required="true"/>
+                
+                <h:column/>
+                <f:facet name="footer">
+                    <p:commandButton value="Iniciar" action="#{login.iniciarSesion()}"/>
+                    <a href="registro.xhtml" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"
+                       onclick="mojarra.jsfcljs(document.getElementById('j_idt6'),
+                                       {'j_idt6:j_idt16': 'j_idt6:j_idt16'}, '');
+                        return false">
+                    </a>
+                </f:facet>
+                                
+                
+            </h:panelGrid>
+            
+            <p:separator/>
+        </h:form>
+    </h:body>
+</html>
